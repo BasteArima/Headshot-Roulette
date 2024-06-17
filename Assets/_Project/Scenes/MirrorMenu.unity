@@ -399,6 +399,8 @@ GameObject:
   - component: {fileID: 987658596}
   - component: {fileID: 987658595}
   - component: {fileID: 987658594}
+  - component: {fileID: 987658597}
+  - component: {fileID: 987658598}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -456,7 +458,7 @@ MonoBehaviour:
   autoConnectClientBuild: 0
   offlineScene: Assets/_Project/Scenes/MirrorMenu.unity
   onlineScene: Assets/_Project/Scenes/MirrorTest.unity
-  transport: {fileID: 987658594}
+  transport: {fileID: 987658597}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
@@ -465,7 +467,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 7577524260482781248, guid: 0d27bde7f28ac154c8605829a964509f, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 8073197143227892179, guid: da32af79834a66944803f5310fde30f5, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -496,6 +499,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987658597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987658592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929e3234c7db540b899f00183fc2b1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transports:
+  - {fileID: 987658594}
+  - {fileID: 987658598}
+--- !u!114 &987658598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987658592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0110f245bfcfc7d459681f7bd9ebc590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMessageSize: 16384
+  maxHandshakeSize: 3000
+  serverMaxMsgsPerTick: 10000
+  clientMaxMsgsPerTick: 1000
+  sendTimeout: 5000
+  receiveTimeout: 20000
+  noDelay: 1
+  sslEnabled: 0
+  sslProtocols: 3072
+  sslCertJson: ./cert.json
+  port: 7778
+  batchSend: 1
+  waitBeforeSend: 1
+  clientUseWss: 0
+  clientWebsocketSettings:
+    ClientPortOption: 0
+    CustomClientPort: 0
+  minimumLogLevel: 3
 --- !u!1 &1148556855
 GameObject:
   m_ObjectHideFlags: 0
