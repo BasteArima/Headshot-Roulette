@@ -19,6 +19,7 @@ namespace _Project.Scripts.State
         {
             Debug.Log($"Starting game");
             _gameOver = false;
+            CurrentShotTry = 0;
             SetRandomBulletInWeapon();
             RandomFirstPlayer();
             StartGameCycle();
