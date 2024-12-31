@@ -1,14 +1,15 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _Project.Scripts.State
 {
-    [CreateAssetMenu(menuName = "State/ShootSelfStep")]
     public class ShootSelfStep : State
     {
-        public override UniTask Execute(CoreGameStateManager coreGameStateManager)
+        private bool _isComplete;
+
+        public override bool IsComplete => _isComplete;
+
+        public override void OnEnter(CoreGameStateManager coreGameStateManager)
         {
-            Debug.Log($"Shot");
             if (coreGameStateManager.RandomBulletPosition == coreGameStateManager.CurrentShotTry)
             {
                 Debug.Log($"Player: {coreGameStateManager.CurrentPlayer} shoot himself");
@@ -19,8 +20,15 @@ namespace _Project.Scripts.State
                 Debug.Log($"Player: {coreGameStateManager.CurrentPlayer} dodge bullet");
                 coreGameStateManager.CurrentShotTry++;
             }
-            
-            return UniTask.CompletedTask;
+            _isComplete = true;
+        }
+
+        public override void OnUpdate(CoreGameStateManager coreGameStateManager)
+        {
+        }
+
+        public override void OnExit(CoreGameStateManager coreGameStateManager)
+        {
         }
     }
 }

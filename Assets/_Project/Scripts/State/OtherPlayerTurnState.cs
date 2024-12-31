@@ -1,16 +1,26 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _Project.Scripts.State
 {
-    [CreateAssetMenu(menuName = "State/OtherPlayerTurnState")]
     public class OtherPlayerTurnState : State
     {
-        public override UniTask Execute(CoreGameStateManager coreGameStateManager)
+        private bool _isComplete;
+
+        public override bool IsComplete => _isComplete;
+
+        public override void OnEnter(CoreGameStateManager coreGameStateManager)
         {
-            coreGameStateManager.CurrentPlayer = coreGameStateManager.CurrentPlayer == 0 ? 1 : 0;
+            coreGameStateManager.ToggleCurrentPlayer();
             Debug.Log($"Now turn to {coreGameStateManager.CurrentPlayer} player");
-            return UniTask.CompletedTask;
+            _isComplete = true;
+        }
+
+        public override void OnUpdate(CoreGameStateManager coreGameStateManager)
+        {
+        }
+
+        public override void OnExit(CoreGameStateManager coreGameStateManager)
+        {
         }
     }
 }
