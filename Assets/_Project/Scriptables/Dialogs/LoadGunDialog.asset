@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe21f6c3b4a44d3fa445eb6792c7ac00, type: 3}
+  m_Name: LoadGunDialog
+  m_EditorClassIdentifier: 
+  _phrases:
+  - Character: {fileID: 11400000, guid: 3f3b8dbce6dde0e4e83b6425a44ee5f6, type: 2}
+    Emotion: 0
+    PhraseKey: "\u042D\u042D\u042D\u042D\u042D\u042D!"
+  - Character: {fileID: 11400000, guid: c92847cb005eced499f76a386be1a80c, type: 2}
+    Emotion: 0
+    PhraseKey: "\u0425\u0435-\u0445\u0435, \u043D\u0435 \u043A\u0438\u043F\u0438\u0448\u0443\u0439,
+      \u0441\u044B\u0433\u0440\u0430\u0435\u043C \u0447\u0435\u0441\u0442\u043D\u043E"
+  - Character: {fileID: 11400000, guid: 3f3b8dbce6dde0e4e83b6425a44ee5f6, type: 2}
+    Emotion: 0
+    PhraseKey: "\u0410\u0430\u0430\u0430\u0430, \u043D\u0443 \u043B\u0430\u0434\u043D\u043E"

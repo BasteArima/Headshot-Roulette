@@ -12,16 +12,16 @@ namespace _Project.Scripts.State
         /// <summary>
         /// Вызывается один раз при входе в состояние
         /// </summary>
-        public abstract void OnEnter(CoreGameStateManager coreGameStateManager);
+        public abstract void OnEnter(StateManager stateManager);
 
         /// <summary>
         /// Вызывается каждый кадр, пока состояние активно
         /// </summary>
-        public abstract void OnUpdate(CoreGameStateManager coreGameStateManager);
+        public abstract void OnUpdate(StateManager stateManager);
 
         /// <summary>
         /// Вызывается один раз перед выходом из состояния
         /// </summary>
-        public abstract void OnExit(CoreGameStateManager coreGameStateManager);
+        public abstract void OnExit(StateManager stateManager);
     }
 }
