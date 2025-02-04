@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using _Project.Scripts.Core;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts.State
@@ -6,7 +7,7 @@ namespace _Project.Scripts.State
     public class StateManager : MonoBehaviour
     {
         [SerializeField] protected State[] _states;
-        [SerializeField] private SessionData _sessionData;
+        [SerializeField] private SessionData _sessionData = new SessionData();
 
         [ShowInInspector, ReadOnly] private State _currentState;
         [ShowInInspector, ReadOnly] private int _currentStateIndex = -1;
@@ -19,13 +20,9 @@ namespace _Project.Scripts.State
                 return;
 
             if (!_currentState.IsComplete)
-            {
                 _currentState.OnUpdate(this);
-            }
             else
-            {
                 GoToNextState();
-            }
         }
 
         private void GoToState(int index)

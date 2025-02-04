@@ -3,9 +3,10 @@ using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 
-namespace _Project.Scripts
+namespace _Project.Scripts.Core
 {
-    public class SessionData : MonoBehaviour
+    [System.Serializable]
+    public class SessionData
     {
         [ShowInInspector, ReadOnly] public int RandomBulletPosition { get; private set; }
         [ShowInInspector, ReadOnly] public int CurrentShotTry { get; set; }
@@ -17,7 +18,6 @@ namespace _Project.Scripts
             GameOver = false;
             CurrentShotTry = 0;
             RandomBulletPosition = Random.Range(0, 6);
-            Debug.Log($"Start random bullet position: {RandomBulletPosition}");
         }
 
         public void ToggleCurrentPlayer()

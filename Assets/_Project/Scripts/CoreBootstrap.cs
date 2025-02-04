@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 
 namespace _Project.Scripts
 {
-    public class IntroController : MonoBehaviour
+    public class CoreBootstrap : MonoBehaviour
     {
         [SerializeField] private PlayableDirector _introDirector;
         [SerializeField] private DialogueData _toStartGameDialog;

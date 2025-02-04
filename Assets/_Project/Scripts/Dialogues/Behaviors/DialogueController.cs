@@ -9,7 +9,7 @@ namespace Dialogues.Behaviours
     public class DialogueController : MonoBehaviour
     {
         [SerializeField] private DialogueView _dialogueView;
-
+        
         private void Awake()
         {
             MessageBroker.Default

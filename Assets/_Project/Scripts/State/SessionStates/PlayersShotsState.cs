@@ -27,7 +27,6 @@ namespace _Project.Scripts.State.SessionStates
 
         private void RoundStatesManagerOnRestartRound(RoundGameOverSignal signal)
         {
-            Debug.Log($"RoundStatesManagerOnRestartRound");
             _isComplete = true;
         }
 
